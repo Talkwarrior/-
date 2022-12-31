@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+        <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumJungHagSaeng.css" rel="stylesheet">
+        <link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'cards/styles.css' %}">
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="main-section">
+            <nav>
+                <a class="navbar-logo navbar-item" href="{% url 'index' %}">엽서 생성기</a>
+                <span class="navbar-item navbar-text">축하카드/편지 생성 및 공유</span>
+            </nav>
+            <section>
+                {% block body %}
+                {% endblock %}
+            </section>
+            <footer>
+                <hr>
+                Created by <a href="https://github.com/Talkwarrior">백종헌</a> | <a href="https://kucc.co.kr/">KUCC</a>
+            </footer>
+        </div>
+    </body>
+</html>

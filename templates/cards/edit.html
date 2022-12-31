@@ -1,0 +1,59 @@
+{% extends 'cards/layout.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'cards/edit.css' %}">
+    <script src="{% static 'cards/edit.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    <div id="edit-form">
+        {% csrf_token %}
+        <div class="option-item">
+            <label for="option-title">제목: </label>
+            <input type="text" name="title" id="option-title" value="{{ title }}" maxlength="100">
+        </div>
+        <canvas id="edit-canvas" width="1920" height="1080">미리보기</canvas>
+        <div id="edit-options">
+            <div class="option-item" style="grid-column: 1 / 4; grid-row: 1">
+                <label for="option-text">텍스트: </label>
+                <textarea name="text" id="option-text"></textarea>
+            </div>
+            <div class="option-item" style="grid-column: 1; grid-row: 2">
+                <label for="option-background">배경이미지: </label>
+                <select name="background" id="option-background">
+                    <option value="waterdrop" selected="True">물방울</option>
+                    <option value="meerkat">미어캣</option>
+                    <option value="facet">패싯</option>
+                    <option value="Custom">직접업로드</option>
+                </select>
+            </div>
+            <div class="option-item" style="grid-column: 2; grid-row: 2">
+                <label for="option-file">이미지 업로드</label>
+                <input type="file" name="file" id="option-file" disabled="True" accept="image/*">
+            </div>
+            <div class="option-item" style="grid-column: 1; grid-row: 3">
+                <label for="option-font">글꼴: </label>
+                <select name="font" id="option-font">
+                    <option selected="True" value="NanumGothic">나눔고딕</option>
+                    <option value="NanumJungHagSaeng">나눔손글씨 중학생</option>
+                    <option value="MaruBuri">마루 부리</option>
+                </select>
+            </div>
+            <div class="option-item" style="grid-column: 2; grid-row: 3">
+                <label for="option-fontSize">글자크기: </label>
+                <input type="number" name="fontSize" id="option-fontSize" value="60" min="15" max="150">
+            </div>
+            <div class="option-item" style="grid-column: 3; grid-row: 2">
+                <span></span>
+                <button id="share-button">공유하기</button>
+            </div>
+            <div class="option-item" style="grid-column: 3; grid-row: 3">
+                <span></span>
+                <button id="save-button">저장하기</button>
+            </div>
+        </div>
+        <div id="url-list">
+        </div>
+    </div>
+{% endblock %}

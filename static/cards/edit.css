@@ -1,0 +1,83 @@
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#edit-canvas {
+    border: 1px solid black;
+    background-size: 100% 100%;
+}
+
+#edit-options {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+.option-item {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+#option-title {
+    font-size: 20px;
+    font-family: 'NanumGothic';
+    border-radius: 3px;
+}
+
+#option-text {
+    font-size: 15px;
+    justify-content: right;
+}
+
+.option-item > label {
+    font-size: 20px;
+    font-family: 'NanumGothic';
+    padding: 5px;
+}
+
+.option-item > :not(label) {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #212933;
+    color: #f8f9fa; 
+}
+
+.option-item > span {
+    background-color: transparent;
+}
+
+.option-item > button {
+    background-color: #085ed7;
+    border: 0.5px solid black;
+    border-radius: 3px;
+}
+
+#url-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.url-item {
+    color: #212529; 
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #198754;
+}
+
+@media (max-width: 800px) {
+    .option-item > label {
+        font-size: 17px;
+    }
+    
+    .option-item > :not(label) {
+        padding: 8px;
+    }
+
+    .option-item > span {
+        display: none;
+    }
+}
